@@ -7,5 +7,4 @@ Config.VoiceChange = 'z'
 -- Optional (will hide armour if == 0 and oxygen if not in water)
 Config.ShowArmour = true
 Config.ShowOxygen = true
-
 Config.BeepHud = true

@@ -6,8 +6,6 @@ local healthSwitch, shieldSwitch, hungerSwitch, thirstSwitch, staminaSwitch, oxy
 local whisper, normal, scream = 33, 66, 100 
 local microphone = normal -- Change this for default
 
-
-
 -- Main Thread
 CreateThread(function()
     while ESX == nil do
@@ -16,18 +14,9 @@ CreateThread(function()
 	end
 end)
 
-RegisterNetEvent("pe-hud:status")
-AddEventHandler("pe-hud:status", function(status)
-    TriggerEvent('esx_status:getStatus', 'hunger', function(status)
-        hunger = status.value / 10000
-    end)
-    TriggerEvent('esx_status:getStatus', 'thirst', function(status)
-        thirst = status.value / 10000
-    end)
-end)
-
 CreateThread(function()
 	while true do
+		Wait(1000)
         local health = nil
 		local oxygen = 10 * GetPlayerUnderwaterTimeRemaining(PlayerId())
 		local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
@@ -251,9 +240,7 @@ CreateThread(function()
 			players = players,
 			time = hours .. " : " .. minutes
 		})
-		Wait(420)
 	end
-	print("Hunger: " .. hunger .. "\nThirst: " .. thirst)
 end)
 
 CreateThread(function()
@@ -463,6 +450,16 @@ AddEventHandler('PE:change', function(action)
 			SendNUIMessage({action = 'microphoneHide'})
 		end
     end
+end)
+
+RegisterNetEvent("esx_status:onTick")
+AddEventHandler("esx_status:onTick", function(status)
+    TriggerEvent('esx_status:getStatus', 'hunger', function(status)
+        hunger = status.val / 10000
+    end)
+    TriggerEvent('esx_status:getStatus', 'thirst', function(status)
+        thirst = status.val / 10000
+    end)
 end)
 
 -- Opening Menu
