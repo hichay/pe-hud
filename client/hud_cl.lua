@@ -16,7 +16,7 @@ end)
 
 CreateThread(function()
 	while true do
-		Wait(1000)
+		Wait(420)
         local health = nil
 		local oxygen = 10 * GetPlayerUnderwaterTimeRemaining(PlayerId())
 		local stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId())
@@ -73,20 +73,6 @@ CreateThread(function()
 			else
 				SendNUIMessage({action = 'armorStop'})
 				beepShield = false
-			end
-			if (hunger <= 35) and not (hunger == 0) and not beepHunger then
-				SendNUIMessage({action = 'hungerStart'})
-				beepHunger = true
-			else
-				SendNUIMessage({action = 'hungerStop'})
-				beepHunger = false
-			end
-			if (thirst <= 35) and not (thirst == 0) and not beepThirst then
-				SendNUIMessage({action = 'thirstStart'})
-				beepThirst = true
-			else
-				SendNUIMessage({action = 'thirstStop'})
-				beepThirst = false
 			end
 			if (stamina <= 35) and not beepStamina then
 				SendNUIMessage({action = 'staminaStart'})

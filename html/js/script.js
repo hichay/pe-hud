@@ -129,22 +129,6 @@ window.addEventListener("message", function (event) {
       document.getElementById("armor").style.animation = "none";
     break;
 
-    case "hungerStart":
-      document.getElementById("hunger").style.animation = "pulse 1.5s linear infinite";
-    break;
-
-    case "hungerStop":
-      document.getElementById("hunger").style.animation = "none";
-    break;
-
-    case "thirstStart":
-      document.getElementById("thirst").style.animation = "pulse 1.5s linear infinite";
-    break;
-
-    case "thirstStop":
-      document.getElementById("thirst").style.animation = "none";
-    break;
-
     case "staminaStart":
       document.getElementById("stamina").style.animation = "pulse 1.5s linear infinite";
     break;
