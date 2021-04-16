@@ -1,4 +1,4 @@
-# pe-hud
+# pe-hud ESX
 
 A very simple standalone HUD with menu that allows for customization
 
@@ -7,8 +7,7 @@ A very simple standalone HUD with menu that allows for customization
  - Reset position of menu and hud elements
  - Hide when paused
  - Multiple options like movie style and hide map
-
-# Video/Screenshot
+ - Hunger & Thirst for ESX
 
 # Acknowledgement
 
