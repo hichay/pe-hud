@@ -399,7 +399,7 @@ RegisterCommand('+levelVoice', function()
 	end
 end)
 
-RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', 'f7')
+RegisterKeyMapping('hud', 'Open the hud menu', 'keyboard', Config.openKey)
 
 RegisterKeyMapping('+levelVoice', 'Do not use', 'keyboard', Config.VoiceChange)
 
