@@ -23,6 +23,12 @@ CreateThread(function()
 		local armor, id = GetPedArmour(PlayerPedId()), GetPlayerServerId(PlayerId())
 		local minutes, hours =  GetClockMinutes(), GetClockHours()
 		local players = #GetActivePlayers() * 100 / Config.MaxPlayers
+		TriggerEvent('esx_status:getStatus', 'hunger', function(h)
+       			 hunger = h.getPercent()
+		end)
+		TriggerEvent('esx_status:getStatus', 'thirst', function(t)
+        		 thirst = t.getPercent()
+		end)	
 		if IsEntityDead(PlayerPedId()) then
 			health = 0
 		else
